@@ -1,5 +1,5 @@
-import Carousel from "./Carousel";
-import ListProduct from "./ListProduct";
+import Carousel from "../components/Carousel";
+import ListProduct from "../components/ListProduct";
 
 const HomeContent = () => {
 	return (

@@ -1,24 +1,23 @@
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import Home from "./components/Home";
-import Cart from "./components/Cart";
-import DetailProduct from "./components/DetailProduct";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import HomeContent from "./components/HomeContent";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import DetailProduct from "./pages/DetailProduct";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import HomeContent from "./pages/HomeContent";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home/>}>
-          <Route path="/" element={<HomeContent/>}/>
+          <Route path="" element={<HomeContent/>}/>
           <Route path="/cart" element={<Cart/>}/>
-          <Route path="/detail" element={<DetailProduct/>}/>
+          <Route path="/detail/:id" element={<DetailProduct/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
-          </Route>
+        </Route>
       </Routes>
     </>
   );

@@ -1,0 +1,15 @@
+.logo, .banner {
+    border: 1px solid lightgray;
+    height: 10vh;
+    line-height: 10vh;
+    text-align: center;
+}
+
+.left, .mid, .right {
+    border: 1px solid lightgray;
+    height: 100vh;
+}
+
+.carousel {
+    border: 1px solid lightgray;
+}
