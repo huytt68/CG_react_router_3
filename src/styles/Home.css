@@ -13,3 +13,14 @@
 .carousel {
     border: 1px solid lightgray;
 }
+
+.icon {
+    display: flex;
+}
+.fa-trash-can, .fa-pen-to-square {
+    color: #333333;
+}
+.fa-trash-can:hover, .fa-pen-to-square:hover {
+    color: #007bff;
+    transition: 200ms;
+}

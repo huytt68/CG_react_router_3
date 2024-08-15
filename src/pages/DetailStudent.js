@@ -2,18 +2,18 @@ import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 
-const DetailProduct = () => {
-	const [product, setProduct] = useState({})
+const DetailStudent = () => {
+	const [student, setStudent] = useState({})
 	const navigate = useNavigate();
 	let {id} = useParams();
 	useEffect(() => {
-		axios.get('http://localhost:5001/products/'+id).then(res => {
-			setProduct(res.data);
+		axios.get('http://localhost:5000/students/'+id).then(res => {
+			setStudent(res.data);
 		})
 	},[])
 
-	const toBackProduct = () => {
-		navigate("/products");
+	const toBackStudent = () => {
+		navigate("/students");
 	}
 
 	return (
@@ -24,30 +24,34 @@ const DetailProduct = () => {
 					<tbody>
 					<tr>
 						<th scope="row">ID</th>
-						<td>{product.id}</td>
+						<td>{student.id}</td>
 					</tr>
 					<tr>
 						<th scope="row">Name</th>
-						<td>{product.name}</td>
+						<td>{student.name}</td>
 					</tr>
 					<tr>
-						<th scope="row">Price</th>
-						<td>{product.price}</td>
+						<th scope="row">Score</th>
+						<td>{student.score}</td>
 					</tr>
 					<tr>
-						<th scope="row">Quantity</th>
-						<td>{product.quantity}</td>
+						<th scope="row">Description</th>
+						<td>{student.description}</td>
+					</tr>
+					<tr>
+						<th scope="row">Action</th>
+						<td>{student.action}</td>
 					</tr>
 					</tbody>
 				</table>
 			</div>
 			<div className="row">
 				<div className="col-12">
-					<button type="button" className="btn btn-outline-primary col-3" onClick={toBackProduct}>Back</button>
+					<button type="button" className="btn btn-outline-primary col-3" onClick={toBackStudent}>Back</button>
 				</div>
 			</div>
 		</>
 	)
 }
 
-export default DetailProduct;
+export default DetailStudent;

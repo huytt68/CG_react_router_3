@@ -1,6 +1,14 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Navbar = () => {
+	const navigate = useNavigate();
+	const toLogin = () => {
+		navigate("/login")
+	}
+	const toRegister = () => {
+		navigate("/register")
+	}
+
 	return (
 			<div className="row">
 				<div className="col-12 p-0">
@@ -11,15 +19,21 @@ const Navbar = () => {
 									<Link className="nav-link" to="/">Home</Link>
 								</li>
 								<li className="nav-item">
+									<Link className="nav-link" to="/students">Student</Link>
+								</li>
+								<li className="nav-item">
+									<Link className="nav-link" to="/products">Product</Link>
+								</li>
+								<li className="nav-item">
 									<Link className="nav-link" to="/cart">Cart</Link>
 								</li>
 							</ul>
 							<div className="my-2 my-lg-0">
-								<button className="btn btn-outline-primary my-2 my-sm-0">
-									<Link to={'/login'}>Login</Link>
+								<button className="btn btn-outline-primary my-2 my-sm-0" onClick={toLogin}>
+									Login
 								</button>
-								<button className="btn btn-outline-primary my-2 my-sm-0 ml-4">
-									<Link to={'/register'}>Register</Link>
+								<button className="btn btn-outline-primary my-2 my-sm-0 ml-4" onClick={toRegister}>
+									Register
 								</button>
 							</div>
 						</div>
