@@ -8,13 +8,13 @@ const EditStudent = () => {
 	const navigate = useNavigate();
 	let {id} = useParams();
 	useEffect(() => {
-		axios.get(`http://localhost:5000/students/${id}`).then((res) => {
+		axios.get(`https://api-student-demo.onrender.com/students/${id}`).then((res) => {
 			setStudent(res.data);
 		})
 	}, []);
 
 	const onSubmitEdit = () => {
-		axios.put(`http://localhost:5000/students/${id}`,student).then(() => {
+		axios.put(`https://api-student-demo.onrender.com/students/${id}`,student).then(() => {
 			alert("Successfully update!");
 			navigate("/students");
 		})

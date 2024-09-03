@@ -7,7 +7,7 @@ const AddProduct = () => {
 	const navigate = useNavigate();
 
 	const onSubmitAdd = () => {
-		axios.post("http://localhost:5001/products",newProduct).then(() => {
+		axios.post("https://api-product-demo-react.onrender.com/products",newProduct).then(() => {
 			alert("Successfully added!");
 			navigate("/products");
 		})

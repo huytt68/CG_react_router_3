@@ -8,7 +8,7 @@ const ListProduct = () => {
 	const [products, setProducts] = useState([]);
 	const navigate = useNavigate();
 	const getProducts = () => {
-		axios.get("http://localhost:5001/products").then(res => {
+		axios.get("https://api-product-demo-react.onrender.com/products").then(res => {
 			setProducts(res.data);
 		})
 	}
@@ -25,7 +25,7 @@ const ListProduct = () => {
 	const deleteProduct = (id) => {
 		const isConfirm = window.confirm("Are you sure");
 		if(isConfirm){
-			axios.delete(`http://localhost:5001/products/${id}`).then(res => {
+			axios.delete(`https://api-product-demo-react.onrender.com/products/${id}`).then(res => {
 				alert("Deleted successfully!");
 				getProducts();
 			})

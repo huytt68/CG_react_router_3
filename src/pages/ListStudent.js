@@ -8,7 +8,7 @@ const ListStudent = () => {
 	const [students, setStudents] = useState([]);
 	const navigate = useNavigate();
 	const getStudent = () => {
-		axios.get("http://localhost:5000/students").then(res => {
+		axios.get("https://api-student-demo.onrender.com/students").then(res => {
 			setStudents(res.data);
 		})
 	}
@@ -25,7 +25,7 @@ const ListStudent = () => {
 	const deleteStudent = (id) => {
 		const isConfirm = window.confirm("Are you sure");
 		if(isConfirm){
-			axios.delete(`http://localhost:5000/students/${id}`).then(res => {
+			axios.delete(`https://api-student-demo.onrender.com/students/${id}`).then(res => {
 				alert("Deleted successfully!");
 				getStudent();
 			})

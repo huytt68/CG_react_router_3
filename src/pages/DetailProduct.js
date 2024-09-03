@@ -7,7 +7,7 @@ const DetailProduct = () => {
 	const navigate = useNavigate();
 	let {id} = useParams();
 	useEffect(() => {
-		axios.get('http://localhost:5001/products/'+id).then(res => {
+		axios.get('https://api-product-demo-react.onrender.com/products/'+id).then(res => {
 			setProduct(res.data);
 		})
 	},[])
@@ -19,7 +19,7 @@ const DetailProduct = () => {
 	return (
 		<>
 			<div className="row">
-				<div className="col-12 text-center"><h2>Detail Student</h2></div>
+				<div className="col-12 text-center"><h1>Detail Student</h1></div>
 				<table className="table table-striped">
 					<tbody>
 					<tr>

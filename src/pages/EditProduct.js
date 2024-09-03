@@ -8,13 +8,13 @@ const EditProduct = () => {
 	const navigate = useNavigate();
 	let {id} = useParams();
 	useEffect(() => {
-		axios.get(`http://localhost:5001/products/${id}`).then((res) => {
+		axios.get(`https://api-product-demo-react.onrender.com/products/${id}`).then((res) => {
 			setProduct(res.data);
 		})
 	}, []);
 
 	const onSubmitEdit = () => {
-		axios.put(`http://localhost:5001/products/${id}`,product).then(() => {
+		axios.put(`https://api-product-demo-react.onrender.com/products/${id}`,product).then(() => {
 			alert("Successfully update!");
 			navigate("/products");
 		})

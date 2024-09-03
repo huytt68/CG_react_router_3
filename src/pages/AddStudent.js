@@ -7,7 +7,7 @@ const AddStudent = () => {
 	const navigate = useNavigate();
 
 	const onSubmitAdd = () => {
-		axios.post("http://localhost:5000/students",newStudent).then(() => {
+		axios.post("https://api-student-demo.onrender.com/students",newStudent).then(() => {
 			alert("Successfully added!");
 			navigate("/students");
 		})

@@ -1,7 +1,6 @@
 import './App.css';
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
-import Cart from "./pages/Cart";
 import DetailStudent from "./pages/DetailStudent";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -13,6 +12,8 @@ import ListProduct from "./pages/ListProduct";
 import DetailProduct from "./pages/DetailProduct";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
+import ListUser from "./pages/ListUser";
+import DetailUser from "./pages/DetailUser";
 
 function App() {
   return (
@@ -20,7 +21,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}>
           <Route path="" element={<HomeContent/>}/>
-          <Route path="/cart" element={<Cart/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/students" element={<ListStudent/>}/>
@@ -31,6 +31,13 @@ function App() {
           <Route path="/detailproduct/:id" element={<DetailProduct/>}/>
           <Route path="/addproduct" element={<AddProduct/>}/>
           <Route path="/editproduct/:id" element={<EditProduct/>}/>
+          <Route path="/users" element={<ListUser/>}/>
+          <Route path="/detailuser/:id" element={<DetailUser/>}/>
+          <Route
+            path="*"
+            element={<Navigate to="/dashboard" replace={true} />}
+          />
+
         </Route>
       </Routes>
     </>
